@@ -21,3 +21,12 @@ en:
     help:
       help: "Help"
       help_statement: "If you have any problem, please call 04-123-456"
+  users:
+    index:
+      all_users: "All users"
+      search: "Search"
+      number: "No."
+      avatar: "Avatar"
+      name: "Name"
+      email: "Email"
+      action: "Action"
