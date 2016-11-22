@@ -30,3 +30,19 @@ en:
       name: "Name"
       email: "Email"
       action: "Action"
+  shared:
+    error_messages:
+      contain: "The form contains"
+      error: "error"
+  admin:
+    categories:
+      new:
+        add_category: "Add category"
+      form:
+        create: "Create"
+        name: "Name"
+        description: "Description"
+        content: "Enter description"
+      create:
+        create_category_success: "Create category successfully"
+        create_category_fail: "Fail to create category"
