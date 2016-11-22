@@ -8,6 +8,11 @@ en:
       home: "Home"
       help: "Help"
       log_in: "Log in"
+      account : "Account"
+      profile: "Profile"
+      settings : "Settings"
+      log_out : "Log out"
+      users : "Users"
   static_pages:
     home:
       welcome_statement: "Welcome to Framgia E-Learning System!"
@@ -30,6 +35,9 @@ en:
       name: "Name"
       email: "Email"
       action: "Action"
+    new:
+      sign_up : "Sign up"
+      create_account : "Create account"
   shared:
     error_messages:
       contain: "The form contains"
@@ -46,3 +54,20 @@ en:
       create:
         create_category_success: "Create category successfully"
         create_category_fail: "Fail to create category"
+    new:
+      sign_up : "Sign up"
+      create_account : "Create account"
+    form:
+      confirmation : "Confirmation"
+  shared:
+    error_messages:
+      form_contains: "The form contains "
+      error : "Error"
+  sessions:
+    new:
+      login : "Log in"
+      sign_up: "Sign up"
+      new_user: "New User"
+      remember_me : "Remember me"
+    create:
+      invalid : "Invalid email/password combination"
