@@ -8,9 +8,9 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-  scope :all_users, -> search {where QUERY_BY_NAME, search: "%#{search}%"}
+  scope :all_users, -> search {where QUERY_BY_NAME_OR_EMAIL, search: "%#{search}%"}
 
-  QUERY_BY_NAME = "name like :search"
+  QUERY_BY_NAME_OR_EMAIL = "name like :search or email like :search"
 
   attr_accessor :remember_token
   before_save { email.downcase! }

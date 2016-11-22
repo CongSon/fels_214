@@ -38,6 +38,8 @@ en:
     new:
       sign_up : "Sign up"
       create_account : "Create account"
+    form:
+      confirmation : "Confirmation"
   shared:
     error_messages:
       contain: "The form contains"
@@ -54,15 +56,14 @@ en:
       create:
         create_category_success: "Create category successfully"
         create_category_fail: "Fail to create category"
-    new:
-      sign_up : "Sign up"
-      create_account : "Create account"
-    form:
-      confirmation : "Confirmation"
-  shared:
-    error_messages:
-      form_contains: "The form contains "
-      error : "Error"
+      index:
+        all_categories: "All categories"
+        search: "Search"
+        number: "No."
+        name: "Name"
+        description: "Description"
+        total: "Total words"
+        action: "Action"
   sessions:
     new:
       login : "Log in"

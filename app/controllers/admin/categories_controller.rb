@@ -1,4 +1,11 @@
 class Admin::CategoriesController < ApplicationController
+  def index
+    params[:search] ||= ""
+    @categories = Category.order(created_at: :ASC)
+      .send(Settings.all_categories, params[:search])
+      .paginate page: params[:page], per_page: Settings.category.per_page
+  end
+
   def new
     @category = Category.new
   end

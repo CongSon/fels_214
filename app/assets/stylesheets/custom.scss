@@ -125,6 +125,7 @@ tr.user-row .user-image {
 tr.user-row td {
   transform: translateY(10px);
 }
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -167,3 +168,7 @@ input {
   margin-left: 0;
 }
 
+
+tr.category-row td {
+  transform: translateY(10px);
+}
