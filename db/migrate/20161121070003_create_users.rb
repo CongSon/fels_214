@@ -5,10 +5,11 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :email
       t.string :password_digest
       t.string :remember_digest
-      t.boolean :is_admin
+      t.boolean :is_admin, default: false
       t.string :avatar
 
       t.timestamps
+      add_index :users, :email, unique: true
     end
   end
 end
