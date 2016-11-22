@@ -1,0 +1,13 @@
+<tr class="category-row">
+  <td class="col-md-1"><%= index_for category_counter, @categories.current_page,
+    Settings.category.per_page %></td>
+  <td class="col-md-2"><%= category.name %></td>
+  <td class="col-md-4"><%= category.description %></td>
+  <td class="col-md-2"><%= category.words.size %></td>
+  <td class="col-md-3">
+  <div class="btn btn-sm btn-primary">
+    <i class="fa fa-play" aria-hidden="true"></i>
+    <%= link_to t(".start"),"#" , class: "btn-primary" %>
+  </div>
+  </td>
+</tr>

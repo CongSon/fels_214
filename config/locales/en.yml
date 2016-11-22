@@ -72,3 +72,14 @@ en:
       remember_me : "Remember me"
     create:
       invalid : "Invalid email/password combination"
+  categories:
+    index:
+      search : "Search"
+      all_categories : "All categories"
+      number : "No."
+      name : "Name category"
+      description : "Description"
+      total_word : "Total word"
+      action : "Action"
+    category:
+      start: "start"
