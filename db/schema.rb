@@ -71,10 +71,10 @@ ActiveRecord::Schema.define(version: 20161121071502) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "is_admin"
+    t.boolean  "is_admin",        default: false
     t.string   "avatar"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "words", force: :cascade do |t|

@@ -16,26 +16,56 @@
     <% end %>
   </div>
 </div>
-<div class="panel-body">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="table-responsive table-condensed">
-        <table class="table table-hover th_word bg-table" id="list_category">
-          <thead class="title_table th_word">
-            <tr>
-              <th class="th_index"><%= t ".number" %></th>
-              <th class="th_category"><%= t ".name" %></th>
-              <th class="th_category"><%= t ".description" %></th>
-              <th class="th_category"><%= t ".total" %></th>
-              <th class="th_category"><%= t ".action" %></th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= render @categories %>
-          </tbody>
-        </table>
-        <%= will_paginate %>
+<div>
+<%= link_to t(".add_category"), new_admin_category_path, remote: true,
+  class: "btn btn-primary btn-add-category" %>
+</div>
+<div class="col-md-10 col-md-offset-1">
+  <div class="table-responsive table-condensed">
+    <table class="table table-hover th_word bg-table" id="list_category">
+      <tr>
+        <th><%= t ".number" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".description" %></th>
+        <th><%= t ".total" %></th>
+        <th><%= t ".action" %></th>
+      </tr>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  </div>
+</div>
+<%= form_tag admin_categories_path , method: :post,
+  id: "add-category-form" do %>
+  <div id="category-modal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3><%= t".add_category" %></h3>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div>
+              <label><%= t ".name" %></label>
+              <%= text_field_tag :name, params[:name], class: "form-control" %>
+            </div>
+            <div>
+              <label><%= t ".description" %></label>
+              <%= text_area_tag :description, params[:description],
+                class: "form-control" %>
+            </div>
+            <%= submit_tag t(".add"), class: "btn btn-success btn-block"%>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger"
+              data-dismiss="modal">
+              <%= t ".cancel" %>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</div>
+<% end %>

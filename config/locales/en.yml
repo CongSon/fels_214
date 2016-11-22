@@ -25,7 +25,7 @@ en:
       contact_statement: "Please contact with me follow the email: admin@framgia.com"
     help:
       help: "Help"
-      help_statement: "If you have any problem, please call 04-123-456"
+      help_statement: "If you have any problem, please call 04-23-456"
   users:
     index:
       all_users: "All users"
@@ -64,6 +64,24 @@ en:
         description: "Description"
         total: "Total words"
         action: "Action"
+        add_category: "Add category"
+        name: "Name"
+        description: "Description"
+        add: "Add"
+        cancel: "Cancel"
+      category:
+        edit: "Edit"
+        delete: "Delete"
+        name: "Name"
+        description: "Description"
+        update: "Update"
+        cancel: "Cancel"
+      update:
+        update_success: "Update category successfully"
+        update_fail: "Fail to update category"
+      destroy:
+        delete_success: "Delete category successfully"
+        delete_fail: "Fail to delete category"
   sessions:
     new:
       login : "Log in"
