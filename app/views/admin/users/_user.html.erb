@@ -3,6 +3,9 @@
     Settings.user.per_page %></td>
   <td class="col-md-3 user-image"> <%= image_tag user.avatar? ?
     user.avatar.url : Settings.image, class: "img-responsive" %></td>
-  <td class="col-md-4"><%= link_to user.name, user %></td>
-  <td class="col-md-4"><%= link_to user.email, user %></td>
+  <td class="col-md-3"><%= link_to user.name, user %></td>
+  <td class="col-md-3"><%= link_to user.email, user %></td>
+  <td class="col-md-2">
+    <button class="btn btn-danger"><%= t ".delete" %></button>
+  </td>
 </tr>
