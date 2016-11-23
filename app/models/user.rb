@@ -24,7 +24,7 @@ class User < ApplicationRecord
 
   class << self
     def find_all_user
-      User.where(is_admin: false).order created_at: :ASC
+      User.select(:id, :name, :email, :avatar).where(is_admin: false).order created_at: :ASC
     end
 
     def digest string

@@ -82,6 +82,18 @@ en:
       destroy:
         delete_success: "Delete category successfully"
         delete_fail: "Fail to delete category"
+    users:
+      user:
+        detele: "Delete"
+      index:
+        all_users: "All users"
+        search: "Search"
+        number: "No."
+        avatar: "Avatar"
+        name: "Name"
+        email: "Email"
+        action: "Action"
+        must_login: "You must login!"
   sessions:
     new:
       login : "Log in"
