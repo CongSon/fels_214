@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(version: 20161121071502) do
     t.integer  "followed_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "results", force: :cascade do |t|
@@ -71,10 +74,10 @@ ActiveRecord::Schema.define(version: 20161121071502) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "is_admin"
+    t.boolean  "is_admin",        default: false
     t.string   "avatar"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "words", force: :cascade do |t|
