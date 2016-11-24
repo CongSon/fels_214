@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :users, only: [:index, :destroy]
+    resources :csv, only: [:index, :create]
   end
 
   get  "/signup", to: "users#new"
