@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   private
   def verify_login
     unless logged_in?
-      flash[:danger] = t ".must_login"
+      store_location
+      flash[:danger] = t "must_login"
       redirect_to login_url
     end
   end

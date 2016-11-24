@@ -1,3 +1,5 @@
+lesson:
+  size: 2
 user:
   per_page: 10
 category:
@@ -5,3 +7,4 @@ category:
 image: "img.jpg"
 all_users: "all_users"
 all_categories: "all_categories"
+
