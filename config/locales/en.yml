@@ -1,6 +1,9 @@
 en:
   word_imported: "Word imported!"
   title: "Framgia E-Learning System"
+  must_login: "You must login!"
+  create_lesson_successfully: "Create lesson successfully!"
+  not_enough_word: "Not enough word to create lesson"
   layouts:
     footer:
       framgia: "E-Learning Framgia Vietnam"
@@ -94,7 +97,6 @@ en:
         name: "Name"
         email: "Email"
         action: "Action"
-        must_login: "You must login!"
   sessions:
     new:
       login : "Log in"
@@ -114,3 +116,9 @@ en:
       action : "Action"
     category:
       start: "start"
+  lessons:
+    edit:
+      lesson: "Lesson: %{id}"
+      category: "Category"
+      finish: "Finish"
+      date: "Date"
