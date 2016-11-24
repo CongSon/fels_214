@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 20161121071502) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "content"
-    t.boolean  "is_correct"
+    t.boolean  "is_correct", default: false
     t.integer  "word_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["word_id"], name: "index_answers_on_word_id"
   end
 
@@ -39,13 +39,11 @@ ActiveRecord::Schema.define(version: 20161121071502) do
 
   create_table "lessons", force: :cascade do |t|
     t.integer  "category_id"
-    t.integer  "word_id"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_lessons_on_category_id"
     t.index ["user_id"], name: "index_lessons_on_user_id"
-    t.index ["word_id"], name: "index_lessons_on_word_id"
   end
 
   create_table "relationships", force: :cascade do |t|
