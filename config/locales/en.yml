@@ -1,9 +1,12 @@
 en:
+  answer_not_more_4: "answers not more 4"
+  answer_not_less_2: "answers not less 2"
   word_imported: "Word imported!"
   title: "Framgia E-Learning System"
   must_login: "You must login!"
   create_lesson_successfully: "Create lesson successfully!"
   not_enough_word: "Not enough word to create lesson"
+  required_1_correct: "just required 1 correct"
   layouts:
     footer:
       framgia: "E-Learning Framgia Vietnam"
@@ -17,6 +20,7 @@ en:
       settings : "Settings"
       log_out : "Log out"
       users : "Users"
+      categories : "Categories"
   static_pages:
     home:
       welcome_statement: "Welcome to Framgia E-Learning System!"
@@ -97,6 +101,15 @@ en:
         name: "Name"
         email: "Email"
         action: "Action"
+        must_login: "You must login!"
+    words:
+      new:
+        add_word : "Add word"
+        create_word : "Create word"
+      answer_fields:
+        correct : "Correct"
+      word:
+        add_answer : "Add answer"
   sessions:
     new:
       login : "Log in"
@@ -122,3 +135,9 @@ en:
       category: "Category"
       finish: "Finish"
       date: "Date"
+  word_sucessful: "Add new word sucessful"
+  remove: "Remove"
+  validate:
+    answer: "Correct answer: "
+    zero: "0"
+    duplication: "duplication"
