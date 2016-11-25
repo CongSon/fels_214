@@ -10,6 +10,10 @@ class Lesson < ApplicationRecord
   accepts_nested_attributes_for :results,
     reject_if: proc {|attributes| attributes[:answer_id].blank?}
 
+  def number_correct_answer
+    self.results.correct.count
+  end
+
   private
   def words_for_lesson
     self.category.words.order("Random()").limit(Settings.lesson.size)
@@ -22,5 +26,9 @@ class Lesson < ApplicationRecord
     if Settings.lesson.size > self.category.words.size
       self.errors.add :category, I18n.t(".not_enough_word")
     end
+  end
+
+  def verify_user?
+    return current_user.id == @lesson.user_id
   end
 end

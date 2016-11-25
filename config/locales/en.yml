@@ -7,6 +7,8 @@ en:
   create_lesson_successfully: "Create lesson successfully!"
   not_enough_word: "Not enough word to create lesson"
   required_1_correct: "just required 1 correct"
+  update_fail: "Fail to update lesson"
+  update_success: "Update lesson successfully"
   layouts:
     footer:
       framgia: "E-Learning Framgia Vietnam"
@@ -133,8 +135,18 @@ en:
     edit:
       lesson: "Lesson: %{id}"
       category: "Category"
+      date: "Create at"
       finish: "Finish"
-      date: "Date"
+    show:
+      lesson: "Lesson: %{id}"
+      Category: "Category"
+      finish: "Finish at"
+      date: "Create at"
+      ok: "OK"
+      mark: "Mark"
+    result:
+      correct: "Correct: "
+      incorrect: "Incorrect: "
   word_sucessful: "Add new word sucessful"
   remove: "Remove"
   validate:
