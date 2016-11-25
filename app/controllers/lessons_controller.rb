@@ -1,7 +1,12 @@
 class LessonsController < ApplicationController
-  before_action :verify_login, :load_lesson
+  before_action :verify_login
+  before_action :load_lesson, :get_category_name, :check_correct_user,
+    only: [:show, :edit, :update]
 
   def index
+  end
+
+  def show
   end
 
   def create
@@ -17,11 +22,33 @@ class LessonsController < ApplicationController
   end
 
   def edit
-    @category_name = @lesson.category_name
+  end
+
+  def update
+    if @lesson.update_attributes lesson_params.merge is_complete: true
+      flash[:success] = t "update_success"
+      redirect_to lesson_path @lesson
+    else
+      flash[:danger] = t "update_fail"
+      redirect_to categories_path
+    end
   end
 
   private
   def load_lesson
     @lesson = Lesson.find_by id: params[:id]
+    render_404 unless @lesson
+  end
+
+  def lesson_params
+    params.require(:lesson).permit results_attributes: [:id, :answer_id]
+  end
+
+  def get_category_name
+    @category_name = @lesson.category_name
+  end
+
+  def check_correct_user
+    redirect_to(root_url) unless current_user.id == @lesson.user_id
   end
 end
