@@ -9,6 +9,8 @@ en:
   required_1_correct: "just required 1 correct"
   update_fail: "Fail to update lesson"
   update_success: "Update lesson successfully"
+  deleted: "Delete user successfully!"
+  fail_to_delete: "Fail to delete user"
   layouts:
     footer:
       framgia: "E-Learning Framgia Vietnam"
@@ -97,6 +99,7 @@ en:
     users:
       user:
         detele: "Delete"
+        message_confirm: "Do you want to delete user: %{name}"
       index:
         all_users: "All users"
         search: "Search"
