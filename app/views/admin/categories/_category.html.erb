@@ -10,7 +10,7 @@
     <%= t ".edit" %>
   </button>
   <%= link_to t(".delete"), [:admin, category],
-    method: :delete, data: {confirm: "Are you sure?"},
+    method: :delete, data: {confirm: t(".message_confirm", name: category.name)},
     class: "btn btn-danger" %></td>
 </tr>
 <%= form_tag admin_category_path(category) , method: :put,
