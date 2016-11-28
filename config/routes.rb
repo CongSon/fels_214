@@ -15,8 +15,11 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   resources :categories
-  resources :users
   resources :words
+  resources :users
+  resources :followings
+  resources :followers
   resources :lessons
+  resources :relationships, only: [:create, :destroy]
   get "/:page", to: "static_pages#show"
 end

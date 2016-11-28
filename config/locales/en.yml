@@ -11,6 +11,8 @@ en:
   update_success: "Update lesson successfully"
   deleted: "Delete user successfully!"
   fail_to_delete: "Fail to delete user"
+  following : "following"
+  followers : "followers"
   layouts:
     footer:
       framgia: "E-Learning Framgia Vietnam"
@@ -52,10 +54,21 @@ en:
       create_account : "Create account"
     form:
       confirmation : "Confirmation"
+    follow :
+      follow : "Follow"
+    unfollow :
+      unfollow : "Unfollow"
+    show_follow :
+      view_my_profile : "view my profile"
   shared:
     error_messages:
       contain: "The form contains"
       error: "error"
+    user_info:
+      view_my_profile : "View my profile"
+    stats :
+      following : "following"
+      followers : "followers"
   admin:
     categories:
       new:
@@ -179,3 +192,9 @@ en:
       category: "Category"
       word_content: "Word Content"
       action: "Action"
+  followings:
+    show:
+      following: " following"
+  followers:
+    show:
+      follower: " follower"
