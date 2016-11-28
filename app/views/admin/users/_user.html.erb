@@ -6,6 +6,8 @@
   <td class="col-md-3"><%= link_to user.name, user %></td>
   <td class="col-md-3"><%= link_to user.email, user %></td>
   <td class="col-md-2">
-    <button class="btn btn-danger"><%= t ".delete" %></button>
+    <%= link_to t(".delete"), [:admin, user],
+      method: :delete, data: {confirm: t(".message_confirm", name: user.name)},
+      class: "btn btn-danger" %>
   </td>
 </tr>

@@ -15,6 +15,11 @@ class ApplicationController < ActionController::Base
     redirect_to(root_url) unless current_user.is_admin?
   end
 
+  def load_user
+    @user = User.find_by id: params[:id]
+    render_404 unless @user
+  end
+
   protected
   def render_404
     render file: "#{Rails.root}/public/404.html", layout: false, status: 404

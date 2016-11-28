@@ -2,6 +2,8 @@
 @import "bootstrap";
 
 $gray-medium-light: #eaeaea;
+$red: #FF0000;
+$green: #5cb85c;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -174,13 +176,13 @@ tr.category-row td {
 }
 
 .glyphicon-ok{
-  color: green;
+  color: $green;
 }
 
 .glyphicon-remove{
-  color: red;
+  color: $red;
 }
 
 .alert-notice{
-  color: red;
+  color: $red;
 }
