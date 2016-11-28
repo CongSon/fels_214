@@ -112,8 +112,20 @@ en:
         create_word : "Create word"
       answer_fields:
         correct : "Correct"
-      word:
+      form:
         add_answer : "Add answer"
+      index:
+        add_word: "Add word"
+        search: "Search"
+        all_words: "All words"
+        number: "Number"
+        category: "Category"
+        word_content: "Word Content"
+        action: "Action"
+      word:
+        info: " Info"
+        edit: " Edit"
+        delete: " Delete"
   sessions:
     new:
       login : "Log in"
