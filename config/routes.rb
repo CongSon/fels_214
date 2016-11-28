@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :users
+  resources :words
   resources :lessons
   get "/:page", to: "static_pages#show"
 end
