@@ -7,4 +7,5 @@ category:
 image: "img.jpg"
 all_users: "all_users"
 all_categories: "all_categories"
-
+word:
+  per_page: 15

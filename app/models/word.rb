@@ -4,7 +4,11 @@ class Word < ApplicationRecord
   has_many :results
 
   validates :content, presence: true, length: {maximum: 50},
-      uniqueness: {case_sensitive: false}
+    uniqueness: {case_sensitive: false}
+
+  scope :all_words, -> search {where QUERY_BY_CONTENT, search: "%#{search}%"}
+
+  QUERY_BY_CONTENT = "content like :search"
 
   accepts_nested_attributes_for :answers, allow_destroy: true,
     reject_if: proc{|attributes| attributes["content"].blank?}
@@ -35,6 +39,10 @@ class Word < ApplicationRecord
           csv << attributes.map{ |attr| item.send(attr) }
         end
       end
+    end
+
+    def list_word
+    Word.order(created_at: :ASC).includes(:category)
     end
   end
 

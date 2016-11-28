@@ -1,5 +1,13 @@
 class Admin::WordsController < ApplicationController
+  before_action :verify_login, :verify_admin
   before_action :load_all_category, only: [:new, :create]
+
+  def index
+    params[:search] ||= ""
+    @words = Word.list_word
+      .all_words(params[:search])
+      .paginate page: params[:page], per_page: Settings.word.per_page
+  end
 
   def new
     @word = Word.new
@@ -24,4 +32,6 @@ class Admin::WordsController < ApplicationController
   def load_all_category
     @category = Category.select :name, :id
   end
+
+
 end

@@ -24,4 +24,3 @@ function remove_fields(link) {
     alert(I18n.t('answer_not_less_2'))
   }
 }
-

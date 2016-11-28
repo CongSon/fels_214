@@ -1,0 +1,36 @@
+<% provide :title, t(".all_words") %>
+<h1><%= t ".all_words" %></h1>
+<div class="row">
+  <div class="search-form">
+    <%= form_tag admin_words_path, method: :get, id: "search-form" do %>
+      <div class="input-group">
+        <%= text_field_tag :search, params[:search],
+          placeholder: t(".search"), class: "form-control search-field" %>
+        <div class="input-group-btn search-btn">
+        <%= button_tag type: "submit", class: "btn btn-primary" do %>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <span class="label-icon"><%= t ".search" %></span>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div>
+  <%= link_to t(".add_word"), new_admin_word_path, class: "btn btn-success fa fa-plus" %>
+</div>
+<div class="col-md-10 col-md-offset-1">
+  <div class="table-responsive table-condensed">
+    <table class="table table-hover th_word bg-table" id="list_category">
+      <tr>
+        <th><%= t ".number" %></th>
+        <th><%= t ".category" %></th>
+        <th><%= t ".word_content" %></th>
+        <th><%= t ".action" %></th>
+      </tr>
+      <tbody>
+        <%= render @words %>
+      </tbody>
+    </table>
+  </div>
+</div>

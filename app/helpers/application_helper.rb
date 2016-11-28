@@ -44,8 +44,4 @@ module ApplicationHelper
     content_tag :a, name,
       html_options.merge(href: href, onclick: onclick)
   end
-
-  def is_correct_answer answer_id
-    answer_id.nil? ? false : Answer.find_by(id: answer_id).is_correct
-  end
 end
