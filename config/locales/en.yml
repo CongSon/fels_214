@@ -170,3 +170,12 @@ en:
     answer: "Correct answer: "
     zero: "0"
     duplication: "duplication"
+  words:
+    index:
+      add_word: "Add word"
+      search: "Search"
+      all_words: "All words"
+      number: "Number"
+      category: "Category"
+      word_content: "Word Content"
+      action: "Action"

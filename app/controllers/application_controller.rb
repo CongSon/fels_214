@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
     render_404 unless @user
   end
 
+  def load_all_category
+    @category = Category.select :name, :id
+  end
+
   protected
   def render_404
     render file: "#{Rails.root}/public/404.html", layout: false, status: 404
