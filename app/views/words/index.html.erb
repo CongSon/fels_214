@@ -5,11 +5,14 @@
     <%= form_tag words_path, method: :get, id: "search-form" do %>
       <div class="row">
         <div class="col-sm-3">
-          <%= select_tag :category, options_for_select(@category.collect{|category|
-           [category.name, category.id]}), class: "form-control" %>
+          <%= select_tag :category_id, options_for_select(@category.
+            collect{|category| [category.name, category.id]},
+            params[:category_id]), class: "form-control" %>
         </div>
         <div class="col-sm-3">
-          <%= select_tag :status, options_for_select(Settings.word.filter), class: "form-control" %>
+          <%= select_tag :status, options_for_select(
+            Settings.word.filters.map{|filter| [filter.humanize, filter]},
+            params[:status]), class: "form-control" %>
         </div>
         <div class="col-sm-3">
           <%= text_field_tag :search, params[:search],

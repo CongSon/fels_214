@@ -9,7 +9,7 @@ all_users: "all_users"
 all_categories: "all_categories"
 word:
   per_page: 15
-  filter:
-    learnt: "learnt"
-    not_yet: "not_yet"
-    all_word: "all_word"
+  filters:
+    - all_words
+    - learnt
+    - not_yet

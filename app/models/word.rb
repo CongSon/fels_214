@@ -6,9 +6,26 @@ class Word < ApplicationRecord
   validates :content, presence: true, length: {maximum: 50},
     uniqueness: {case_sensitive: false}
 
-  scope :all_words, -> search {where QUERY_BY_CONTENT, search: "%#{search}%"}
+  scope :all_words, -> user_id, search {where QUERY_BY_CONTENT,
+    search: "%#{search}%"}
+  scope :not_yet, -> user_id, search {where QUERY_NOT_YET, user_id: user_id,
+    search: "%#{search}%"}
+  scope :learnt, -> user_id, search {where QUERY_LEARNT, user_id: user_id,
+    search: "%#{search}%"}
+  scope :in_category, -> category_id do
+    where category_id: category_id if category_id.present?
+  end
+
+  QUERY_NOT_YET = "content like :search and id not in (select word_id
+    FROM results r INNER JOIN lessons l
+    ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
 
   QUERY_BY_CONTENT = "content like :search"
+
+  QUERY_LEARNT = "content like :search and id in (select word_id
+    FROM results r INNER JOIN lessons l
+    ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
+
 
   accepts_nested_attributes_for :answers, allow_destroy: true,
     reject_if: proc{|attributes| attributes["content"].blank?}
