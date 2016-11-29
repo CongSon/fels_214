@@ -17,6 +17,7 @@
 //= require i18n/translations
 //= require_tree .
 //= require bootstrap
+//= require custom.js
 
 $(document).on('turbolinks:load', function () {
   category.initialize();

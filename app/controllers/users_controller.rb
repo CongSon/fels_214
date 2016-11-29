@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :verify_login, except: [:show, :new, :create]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :load_user, only: [:edit, :update]
   def index
     params[:search] ||= ""
     @users = User.find_all_user
@@ -19,15 +22,32 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       log_in @user
-      flash[:success] =t ".welcome"
+      flash[:success] = t ".welcome"
       redirect_to root_url
     else
       render :new
     end
   end
+  def edit
+  end
 
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t ".update_success"
+      redirect_to @user
+    else
+      flash[:notice] = t ".update_fail"
+      render :edit
+    end
+  end
   private
   def user_params
-    params.require(:user).permit :name, :email, :password, :password_confirmation
+    params.require(:user).permit :name, :email, :password,
+      :password_confirmation, :avatar
+  end
+
+  def correct_user
+    @user = User.find_by id: params[:id]
+    redirect_to root_url unless current_user? @user
   end
 end
