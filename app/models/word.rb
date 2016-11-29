@@ -2,6 +2,7 @@ class Word < ApplicationRecord
   belongs_to :category
   has_many :answers, dependent: :destroy, inverse_of: :word
   has_many :results
+  delegate :name, to: :category, prefix: true
 
   validates :content, presence: true, length: {maximum: 50},
     uniqueness: {case_sensitive: false}
@@ -59,7 +60,7 @@ class Word < ApplicationRecord
     end
 
     def list_word
-    Word.order(created_at: :ASC).includes(:category)
+      self.order(created_at: :ASC).includes(:category)
     end
   end
 

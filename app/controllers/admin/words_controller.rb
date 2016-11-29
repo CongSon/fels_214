@@ -23,6 +23,11 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def show
+    @word = Word.find_by id: params[:id]
+    @answers = @word.answers
+  end
+
   private
   def word_params
     params.require(:word).permit :category_id, :content,

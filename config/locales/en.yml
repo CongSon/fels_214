@@ -142,6 +142,11 @@ en:
         info: " Info"
         edit: " Edit"
         delete: " Delete"
+      show:
+        word_detail: "Word Detail"
+        content: "Content"
+        answer: "Answer"
+        category: "Category"
   sessions:
     new:
       login : "Log in"
