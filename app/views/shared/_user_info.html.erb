@@ -1,4 +1,4 @@
-<%= image_tag current_user.avatar? ? current_user.avatar.url
+<%= image_tag @user.avatar? ? @user.avatar.url
   : Settings.image, class: "img-responsive" %>
-<h2><%= current_user.name %></h2>
-<span><%= link_to t(".view_my_profile"), current_user %></span>
+<h2><%= @user.name %></h2>
+<span><%= link_to t(".view_my_profile"), @user %></span>

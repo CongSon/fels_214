@@ -1,12 +1,12 @@
 class User < ApplicationRecord
   has_many :lessons, dependent: :destroy
-  has_many :activities, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,
     foreign_key: :followed_id, dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :activities, as: :activityable
 
   scope :all_users, -> search {where QUERY_BY_NAME_OR_EMAIL, search: "%#{search}%"}
 
@@ -69,7 +69,7 @@ class User < ApplicationRecord
   private
   def avatar_size
     if avatar.size > 5.megabytes
-      errors.add(:avatar, "should be less than 5MB")
+      errors.add(:avatar, t("should_be_less_than_5MB"))
     end
   end
 end

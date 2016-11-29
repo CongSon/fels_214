@@ -14,6 +14,7 @@ en:
   fail_to_delete: "Fail to delete user"
   following : "following"
   followers : "followers"
+  should_be_less_than_5MB: "should be less than 5MB"
   layouts:
     footer:
       framgia: "E-Learning Framgia Vietnam"
@@ -70,6 +71,9 @@ en:
       edit: "Edit"
       save: "Save"
       confirmation: "Confirmation"
+    show:
+      more_activities: "More activities"
+      activities: "Activities"
   shared:
     error_messages:
       contain: "The form contains"
@@ -221,3 +225,12 @@ en:
   followers:
     show:
       follower: " follower"
+  activities:
+    activity:
+      follow: "folow"
+      unfollow: "unfollow"
+      start_lesson: "start lesson %{id} in category %{category}"
+      finish_lesson: "finish lesson %{id} with result: %{result}"
+      ago: "ago"
+    index:
+      activities: "Activities"
