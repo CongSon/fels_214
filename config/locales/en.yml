@@ -1,6 +1,7 @@
 en:
   answer_not_more_4: "answers not more 4"
   answer_not_less_2: "answers not less 2"
+  max_size: "Maximum file size is 5MB. Please choose a smaller file."
   word_imported: "Word imported!"
   title: "Framgia E-Learning System"
   must_login: "You must login!"
@@ -60,6 +61,15 @@ en:
       unfollow : "Unfollow"
     show_follow :
       view_my_profile : "view my profile"
+    create:
+      welcome: "Create account successfully"
+    update:
+      update_success: "Update user successfully"
+      update_fail: "Fail to update user"
+    edit:
+      edit: "Edit"
+      save: "Save"
+      confirmation: "Confirmation"
   shared:
     error_messages:
       contain: "The form contains"

@@ -21,6 +21,8 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+  mount_uploader :avatar, PictureUploader
+  validate  :avatar_size
 
   class << self
     def find_all_user
@@ -62,5 +64,12 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include? other_user
+  end
+
+  private
+  def avatar_size
+    if avatar.size > 5.megabytes
+      errors.add(:avatar, "should be less than 5MB")
+    end
   end
 end
