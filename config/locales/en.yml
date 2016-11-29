@@ -152,11 +152,19 @@ en:
         info: " Info"
         edit: " Edit"
         delete: " Delete"
+        confirm: "Are you sure?"
       show:
         word_detail: "Word Detail"
         content: "Content"
         answer: "Answer"
         category: "Category"
+      edit:
+        edit_word: "Edit Word"
+        update_success: "Update success"
+        update_failed: "Update failed"
+      destroy:
+        deleted: "Deleted"
+        fail_to_delete: "Fail to delete"
   sessions:
     new:
       login : "Log in"

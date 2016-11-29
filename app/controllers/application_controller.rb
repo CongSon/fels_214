@@ -20,6 +20,11 @@ class ApplicationController < ActionController::Base
     render_404 unless @user
   end
 
+  def load_word
+    @word = Word.find_by id: params[:id]
+    render_404 unless @word
+  end
+
   def load_all_category
     @category = Category.select :name, :id
   end
