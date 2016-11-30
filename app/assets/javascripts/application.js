@@ -18,7 +18,10 @@
 //= require_tree .
 //= require bootstrap
 //= require custom.js
+//= require highcharts
 
 $(document).on('turbolinks:load', function () {
   category.initialize();
+  chart.initialize();
+  pieChart.initialize();
 });

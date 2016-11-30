@@ -15,6 +15,18 @@ en:
   following : "following"
   followers : "followers"
   should_be_less_than_5MB: "should be less than 5MB"
+  column: "column"
+  user_account: "User account"
+  lesson: " lessons"
+  lesson_count: "Lesson"
+  user: " users"
+  ratio: "Ratio"
+  number: "Number"
+  weekly_report: "Weekly report"
+  vertical: "vertical"
+  right: "right"
+  middle: "middle"
+  mark_statistic: "Mark Statistic"
   layouts:
     footer:
       framgia: "E-Learning Framgia Vietnam"
