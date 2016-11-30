@@ -16,7 +16,11 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :words
-  resources :users
+  resources :users do
+    member do
+      resources :activities, only: :index
+    end
+  end
   resources :followings
   resources :followers
   resources :lessons

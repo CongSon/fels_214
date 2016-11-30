@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :verify_login, except: [:show, :new, :create]
   before_action :correct_user, only: [:edit, :update]
-  before_action :load_user, only: [:edit, :update]
+  before_action :load_user, only: [:show, :edit, :update]
   def index
     params[:search] ||= ""
     @users = User.find_all_user
@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by id: params[:id]
-    render_404 unless @user
+    @activities = Activity.user_activity(@user.id).limit(Settings.activity.size)
   end
 
   def create

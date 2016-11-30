@@ -8,7 +8,7 @@
       <section class="stats">
         <%= render "shared/stats" %>
       </section>
-      <%= render "follow_form" if logged_in? %>
+      <%= render "users/follow_form" if logged_in? %>
     </aside>
     <aside class="col-md-5">
       <section>
@@ -17,7 +17,7 @@
         <ul>
           <%= render @activities %>
         </ul>
-        <%= link_to t(".more_activities"), activities_path(@user) %>
+        <%= will_paginate %>
       <% end %>
     </section>
     </aside>
