@@ -5,10 +5,9 @@
   <td class="col-md-4"><%= category.description %></td>
   <td class="col-md-2"><%= category.words.size %></td>
   <td class="col-md-3">
-  <div class="btn btn-sm btn-primary">
-    <i class="fa fa-play" aria-hidden="true"></i>
     <%= link_to t(".start"), lessons_path(category_id: category.id),
-      method: :post, class: "btn-primary " %>
-  </div>
+      method: :post, class: "btn btn-primary fa fa-play" %>
+    <%= link_to t(".detail"), words_path(category_id: category.id),
+      class: "btn btn-info fa fa-pencil" %>
   </td>
 </tr>

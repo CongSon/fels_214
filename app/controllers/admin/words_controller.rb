@@ -1,11 +1,11 @@
 class Admin::WordsController < ApplicationController
   before_action :verify_login, :verify_admin
-  before_action :load_all_category, except: [:show, :index, :destroy]
+  before_action :load_all_category, except: [:show, :destroy]
   before_action :load_word, except: [:index, :new, :create]
 
   def index
     params[:search] ||= ""
-    @words = Word.list_word
+    @words = Word.list_word.in_category(params[:category_id])
       .all_words(current_user.id, params[:search])
       .paginate page: params[:page], per_page: Settings.word.per_page
   end
