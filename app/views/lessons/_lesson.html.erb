@@ -1,0 +1,28 @@
+<div class="table-responsive table-condensed">
+  <table class="table table-hover th_word bg-table" id="list_category">
+    <tr>
+      <th><%= t ".lesson" %></th>
+      <th><%= t ".category" %></th>
+      <th><%= t ".action" %></th>
+      <th><%= t ".mark" %></th>
+    </tr>
+    <tbody>
+      <tr>
+      <% @lessons.each do |lesson| %>
+        <td class="col-sm-3" ><%= t ".lesson" %><%= lesson.id %></td>
+        <td class="col-sm-3" ><%= lesson.category_name %></td>
+        <td class="col-sm-3">
+          <% if lesson.is_complete %>
+            <%= link_to t(".complete"), lesson_path, class: "btn btn-success btn-sm" %></td>
+          <% else %>
+            <%= link_to t(".not_complete"), edit_lesson_path, class: "btn btn-info btn-sm" %></td>
+          <% end %>
+        </td>
+        <td class="col-sm-3">
+          <%= lesson.number_correct_answer.to_s + " / " + Settings.lesson.size.to_s %>
+        </td>
+      <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>

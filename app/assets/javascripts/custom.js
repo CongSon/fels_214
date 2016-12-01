@@ -12,3 +12,9 @@ var loadFile = function(event) {
   }
   reader.readAsDataURL(event.target.files[0]);
 };
+
+$(document).on('turbolinks:load', function () {
+  $(".import").click(function(){
+  $("#import").fadeIn()
+  });
+});

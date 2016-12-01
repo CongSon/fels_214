@@ -86,6 +86,7 @@ en:
     show:
       more_activities: "More activities"
       activities: "Activities"
+      show_results: "SHOW RESULTS"
   shared:
     error_messages:
       contain: "The form contains"
@@ -164,6 +165,8 @@ en:
         category: "Category"
         word_content: "Word Content"
         action: "Action"
+        import: "Import"
+        submit: "Submit"
       word:
         info: " Info"
         edit: " Edit"
@@ -216,6 +219,13 @@ en:
     result:
       correct: "Correct: "
       incorrect: "Incorrect: "
+    lesson:
+      lesson: "Lesson"
+      category: "Category"
+      action: "Action"
+      mark: "Mark"
+      complete: "Review"
+      not_complete: "Continue"
   word_sucessful: "Add new word sucessful"
   remove: "Remove"
   validate:
