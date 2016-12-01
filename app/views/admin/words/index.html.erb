@@ -23,9 +23,24 @@
     <% end %>
   </div>
 </div>
-<div>
+<div class="row">
+  <div class="col-sm-2">
   <%= link_to t(".add_word"), new_admin_word_path, class: "btn btn-success fa fa-plus" %>
+  </div>
+  <div class="col-sm-2">
+    <div class="btn btn-info import">
+      <i class="fa fa-upload"></i>
+        <%= t ".import" %>
+    </div>
+  </div>
+  <%= form_tag admin_csv_index_path, multipart: true do %>
+    <div class="col-sm-3" id="import" style="display: none">
+      <%= file_field_tag :file %>
+      <%= submit_tag t ".submit" %>
+    </div>
+  <% end %>
 </div>
+
 <div class="col-md-10 col-md-offset-1">
   <div class="table-responsive table-condensed">
     <table class="table table-hover th_word bg-table" id="list_category">
@@ -41,3 +56,6 @@
     </table>
   </div>
 </div>
+<script>
+
+</script>

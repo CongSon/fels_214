@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @activities = Activity.user_activity(@user.id).limit(Settings.activity.size)
+    @lessons = @user.lessons
   end
 
   def create
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
   def edit
   end
 
