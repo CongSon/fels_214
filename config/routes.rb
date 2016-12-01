@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :users, only: [:index, :destroy]
     resources :csv, only: [:index, :create]
-    resources :words
+    resources :words, :charts, :pie_chart
   end
 
   get  "/signup", to: "users#new"

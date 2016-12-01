@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :activities, as: :activityable
 
   scope :all_users, -> search {where QUERY_BY_NAME_OR_EMAIL, search: "%#{search}%"}
+  scope :user_count, -> date_time do
+    where("date(created_at) = '#{date_time}'").count
+  end
 
   QUERY_BY_NAME_OR_EMAIL = "name like :search or email like :search"
 
