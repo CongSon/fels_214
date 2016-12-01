@@ -128,6 +128,7 @@ en:
         update: "Update"
         cancel: "Cancel"
         message_confirm: "Do you want to delete category: %{name} ?"
+        detail: " Detail"
       update:
         update_success: "Update category successfully"
         update_fail: "Fail to update category"
@@ -199,7 +200,8 @@ en:
       total_word : "Total word"
       action : "Action"
     category:
-      start: "start"
+      start: " Start"
+      detail: " Detail"
   lessons:
     edit:
       lesson: "Lesson: %{id}"
