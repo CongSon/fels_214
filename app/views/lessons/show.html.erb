@@ -1,31 +1,33 @@
 <% provide :title, t(".lesson", id: @lesson.id) %>
-<div>
-  <div>
-    <label><%= t ".category" %>:</label>
-    <%= @category_name %>
+<section class="container-fluid">
+  <div class="container">
+    <div>
+      <label><%= t ".category" %>:</label>
+      <%= @category_name %>
+    </div>
+    <div>
+      <label><%= t ".date" %>:</label>
+      <%= convert_datetime @lesson.created_at %>
+    </div>
+    <div>
+    <div>
+      <label><%= t ".finish" %>:</label>
+      <%= convert_datetime @lesson.updated_at %>
+    </div>
+    <div>
+      <label><%= t ".mark" %>:</label>
+      <%= @lesson.number_correct_answer.to_s + " / " + Settings.lesson.size.to_s%>
+    </div>
   </div>
-  <div>
-    <label><%= t ".date" %>:</label>
-    <%= convert_datetime @lesson.created_at %>
-  </div>
-  <div>
-  <div>
-    <label><%= t ".finish" %>:</label>
-    <%= convert_datetime @lesson.updated_at %>
-  </div>
-  <div>
-    <label><%= t ".mark" %>:</label>
-    <%= @lesson.number_correct_answer.to_s + " / " + Settings.lesson.size.to_s %>
-  </div>
-</div>
-<h1><%= t ".lesson", id: @lesson.id %></h1>
-<%= form_for @lesson do |f| %>
-  <ol>
-    <%= f.fields_for :results do |builder| %>
-      <%= render "result", f: builder %>
-    <% end %>
-  </ol>
-  <div class="col-sm-1">
-    <%= link_to t(".ok"), categories_path, class: "btn btn-primary" %>
-  </div>
-<% end %>
+  <h1><%= t ".lesson", id: @lesson.id %></h1>
+  <%= form_for @lesson do |f| %>
+    <ol>
+      <%= f.fields_for :results do |builder| %>
+        <%= render "result", f: builder %>
+      <% end %>
+    </ol>
+    <div class="col-sm-1">
+      <%= link_to t(".ok"), categories_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</section>

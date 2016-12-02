@@ -3,11 +3,13 @@
     Settings.category.per_page %></td>
   <td class="col-md-2"><%= category.name %></td>
   <td class="col-md-4"><%= category.description %></td>
-  <td class="col-md-2"><%= category.words.size %></td>
-  <td class="col-md-3">
+  <td class="col-md-2 pull-right"><%= category.words.size %></td>
+  <td class="col-md-2">
     <%= link_to t(".start"), lessons_path(category_id: category.id),
       method: :post, class: "btn btn-primary fa fa-play" %>
-    <%= link_to t(".detail"), words_path(category_id: category.id),
+  </td>
+  <td class="col-md-1">
+    <%= link_to "", words_path(category_id: category.id),
       class: "btn btn-info fa fa-pencil" %>
   </td>
 </tr>
