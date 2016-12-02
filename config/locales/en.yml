@@ -41,6 +41,8 @@ en:
       log_out : "Log out"
       users : "Users"
       categories : "Categories"
+    admin:
+      e-admin: "E-LEARNING ADMIN"
   static_pages:
     home:
       welcome_statement: "Welcome to Framgia E-Learning System!"
@@ -56,7 +58,7 @@ en:
       help_statement: "If you have any problem, please call 04-23-456"
   users:
     index:
-      all_users: "All users"
+      all_users: "All user"
       search: "Search"
       number: "No."
       avatar: "Avatar"
@@ -109,7 +111,7 @@ en:
         create_category_success: "Create category successfully"
         create_category_fail: "Fail to create category"
       index:
-        all_categories: "All categories"
+        all_categories: "All category"
         search: "Search"
         number: "No."
         name: "Name"
@@ -142,7 +144,7 @@ en:
         detele: "Delete"
         message_confirm: "Do you want to delete user: %{name}"
       index:
-        all_users: "All users"
+        all_users: "All user"
         search: "Search"
         number: "No."
         avatar: "Avatar"
@@ -157,11 +159,11 @@ en:
       answer_fields:
         correct : "Correct"
       form:
-        add_answer : "Add answer"
+        save : "Submit"
       index:
         add_word: "Add word"
         search: "Search"
-        all_words: "All words"
+        all_words: "All word"
         number: "Number"
         category: "Category"
         word_content: "Word Content"
@@ -178,6 +180,7 @@ en:
         content: "Content"
         answer: "Answer"
         category: "Category"
+        ok: "  Back"
       edit:
         edit_word: "Edit Word"
         update_success: "Update success"
@@ -196,7 +199,7 @@ en:
   categories:
     index:
       search : "Search"
-      all_categories : "All categories"
+      all_categories : "All category"
       number : "No."
       name : "Name category"
       description : "Description"
@@ -238,7 +241,7 @@ en:
     index:
       add_word: "Add word"
       search: "Search"
-      all_words: "All words"
+      all_words: "All word"
       number: "Number"
       category: "Category"
       word_content: "Word Content"

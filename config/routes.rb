@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   namespace :admin do
+    root "charts#index"
     resources :categories
     resources :users, only: [:index, :destroy]
     resources :csv, only: [:index, :create]

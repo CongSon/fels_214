@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20161121071502) do
     t.integer  "word_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["id", "word_id"], name: "index_answers_on_id_and_word_id", unique: true
     t.index ["word_id"], name: "index_answers_on_word_id"
   end
 
@@ -86,6 +87,7 @@ ActiveRecord::Schema.define(version: 20161121071502) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["category_id"], name: "index_words_on_category_id"
+    t.index ["id", "category_id"], name: "index_words_on_id_and_category_id", unique: true
   end
 
 end
