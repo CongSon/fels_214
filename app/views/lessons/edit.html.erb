@@ -1,22 +1,25 @@
 <% provide :title, t(".lesson", id: @lesson.id) %>
-<div>
-  <div>
-    <label><%= t ".category" %>:</label>
-    <%= @category_name %>
-  </div>
-  <div>
-    <label><%= t ".date" %>:</label>
-    <%= convert_datetime @lesson.created_at %>
-  </div>
-</div>
-<h1><%= t ".lesson", id: @lesson.id %></h1>
-<%= form_for @lesson do |f| %>
-  <ol>
-    <%= f.fields_for :results do |builder| %>
-      <%= render "question", f: builder %>
+<section class="container-fluid">
+  <div class="container">
+    <div>
+      <label><%= t ".category" %>:</label>
+      <%= @category_name %>
+    </div>
+    <div>
+      <label><%= t ".date" %>:</label>
+      <%= convert_datetime @lesson.created_at %>
+    </div>
+    <h1><%= t ".lesson", id: @lesson.id %></h1>
+    <%= form_for @lesson do |f| %>
+      <ol>
+        <%= f.fields_for :results do |builder| %>
+          <%= render "question", f: builder %>
+        <% end %>
+      </ol>
+      <div class="col-sm-1">
+        <%= f.submit t(".finish"), class: "btn btn-primary" %>
+      </div>
     <% end %>
-  </ol>
-  <div class="col-sm-1">
-    <%= f.submit t(".finish"), class: "btn btn-primary" %>
-  </div>
-<% end %>
+    </div>
+</section>
+

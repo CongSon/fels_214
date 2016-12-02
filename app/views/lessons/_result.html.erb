@@ -11,12 +11,12 @@
   </div>
 <% end %>
 <% if is_correct_answer f.object.answer_id %>
-  <div>
+  <div class="finish">
     <span><%= t ".correct" %></span>
     <span class="glyphicon glyphicon-ok"></span>
   </div>
 <% else %>
-  <div>
+  <div class="finish">
     <span><%= t ".incorrect" %></span>
     <span class="glyphicon glyphicon-remove"></span>
   </div>

@@ -1,25 +1,28 @@
 <% provide(:title, @user.name) %>
-<% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-3">
-      <section class="user_info">
-        <%= render "shared/user_info" %>
+<section class="container-fluid">
+  <% if logged_in? %>
+    <div class="row">
+      <aside class="col-md-3">
+        <section class="user_info">
+          <%= render "shared/user_info" %>
+        </section>
+        <section class="stats">
+          <%= render "shared/stats" %>
+        </section>
+        <%= render "users/follow_form" if logged_in? %>
+      </aside>
+      <aside class="col-md-5">
+        <section>
+        <h1><%= t ".activities" %></h1>
+        <% if @activities.any? %>
+          <ul>
+            <%= render @activities %>
+          </ul>
+          <%= will_paginate %>
+        <% end %>
       </section>
-      <section class="stats">
-        <%= render "shared/stats" %>
-      </section>
-      <%= render "users/follow_form" if logged_in? %>
-    </aside>
-    <aside class="col-md-5">
-      <section>
-      <h1><%= t ".activities" %></h1>
-      <% if @activities.any? %>
-        <ul>
-          <%= render @activities %>
-        </ul>
-        <%= will_paginate %>
-      <% end %>
-    </section>
-    </aside>
-  </div>
-<% end %>
+      </aside>
+    </div>
+  <% end %>
+</section>
+
