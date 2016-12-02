@@ -15,7 +15,8 @@ class UsersController < ApplicationController
 
   def show
     @activities = Activity.user_activity(@user.id).limit(Settings.activity.size)
-    @lessons = @user.lessons
+    @lessons = @user.lessons.paginate page: params[:page],
+      per_page: Settings.lesson.per_page
   end
 
   def create

@@ -32,7 +32,7 @@ module ApplicationHelper
     render association.to_s.singularize + "_fields", f: builder
    end
     link_to_function(name, "add_fields(this, '#{association}',
-      '#{escape_javascript(fields)}')", class: "btn btn-info")
+      '#{escape_javascript(fields)}')", class: "btn btn-info fa fa-plus")
   end
 
   def link_to_function name, *args, &block
