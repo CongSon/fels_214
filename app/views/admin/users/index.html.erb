@@ -1,5 +1,5 @@
 <% provide :title, t(".all_users") %>
-<h1><%= t ".all_users" %></h1>
+<h1 class="head"><%= t ".all_users" %></h1>
 <div class="row">
   <div class="search-form">
     <%= form_tag admin_users_path, method: :get, id: "search-form" do %>
@@ -9,7 +9,6 @@
         <div class="input-group-btn search-btn">
         <%= button_tag type: "submit", class: "btn btn-primary" do %>
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          <span class="label-icon"><%= t ".search" %></span>
         <% end %>
         </div>
       </div>
@@ -20,14 +19,14 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="table-responsive table-condensed">
-        <table class="table table-hover th_word bg-table" id="list_user">
+        <table class="responstable" id="list_user">
           <thead class="title_table th_word">
             <tr>
-              <th class="th_index"><%= t ".number" %></th>
-              <th class="th_user"><%= t ".avatar" %></th>
-              <th class="th_user"><%= t ".name" %></th>
-              <th class="th_user"><%= t ".email" %></th>
-              <th class="th_user"><%= t ".action" %></th>
+              <th><%= t ".number" %></th>
+              <th><%= t ".avatar" %></th>
+              <th><%= t ".name" %></th>
+              <th><%= t ".email" %></th>
+              <th><%= t ".delete" %></th>
             </tr>
           </thead>
           <tbody>

@@ -3,17 +3,22 @@
     Settings.category.per_page %></td>
   <td class="col-md-2"><%= category.name %></td>
   <td class="col-md-4"><%= category.description %></td>
-  <td class="col-md-2"><%= category.words.count %></td>
-  <td class="col-md-3">
-  <%= link_to t(".detail"), admin_words_path(category_id: category.id),
-      class: "btn btn-info fa fa-pencil" %>
-  <button type="button" class="btn btn-success btn-edit-category"
-    id="<%= category.id %>">
-    <%= t ".edit" %>
-  </button>
-  <%= link_to t(".delete"), [:admin, category],
-    method: :delete, data: {confirm: t(".message_confirm", name: category.name)},
-    class: "btn btn-danger" %></td>
+  <td class="col-md-2 pull-right"><%= category.words.count %></td>
+  <td class="col-md-1 text-center">
+    <%= link_to "", admin_words_path(category_id: category.id),
+      class: "btn btn-info fa fa-info-circle" %>
+  </td>
+  <td class="col-md-1">
+    <button type="button" class="btn btn-warning btn-edit-category"
+      id="<%= category.id %>">
+      <i class="fa fa-pencil"></i>
+    </button>
+  </td>
+  <td class="col-md-1">
+    <%= link_to "", [:admin, category],
+      method: :delete, data: {confirm: t(".message_confirm", name: category.name)},
+      class: "btn btn-danger fa fa-trash" %></td>
+  </td>
 </tr>
 <%= form_tag admin_category_path(category) , method: :put,
   id: "edit-category-form" do %>
@@ -21,7 +26,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h3><%= t ".edit_category" %></h3>
+          <h3 class="head"><%= t ".edit_category" %></h3>
         </div>
         <div class="modal-body">
           <form role="form">
@@ -36,9 +41,8 @@
               <%= text_field_tag :description, params[:description],
                 value: category.description, class: "form-control" %>
             </div>
-              <%= submit_tag t(".update"), class: "btn btn-success" %>
-            </div>
             <div class="modal-footer">
+              <%= submit_tag t(".update"), class: "btn btn-primary btn-submit" %>
               <button type="submit" class="btn btn-danger"
                 data-dismiss="modal">
                 <%= t ".cancel" %>

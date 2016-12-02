@@ -1,5 +1,5 @@
 <% provide :title, t(".all_categories") %>
-<h1><%= t ".all_categories" %></h1>
+<h1 class="head"><%= t ".all_categories" %></h1>
 <div class="row">
   <div class="search-form">
     <%= form_tag users_path, method: :get, id: "search-form" do %>
@@ -9,33 +9,32 @@
         <div class="input-group-btn search-btn">
         <%= button_tag type: "submit", class: "btn btn-primary" do %>
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          <span class="label-icon"><%= t ".search" %></span>
         <% end %>
         </div>
       </div>
     <% end %>
   </div>
-</div>
-<div>
-<%= link_to t(".add_category"), new_admin_category_path, remote: true,
-  class: "btn btn-primary btn-add-category" %>
-</div>
-<div class="col-md-10 col-md-offset-1">
-  <div class="table-responsive table-condensed">
-    <table class="table table-hover th_word bg-table" id="list_category">
-      <tr>
-        <th><%= t ".number" %></th>
-        <th><%= t ".name" %></th>
-        <th><%= t ".description" %></th>
-        <th><%= t ".total" %></th>
-        <th><%= t ".action" %></th>
-      </tr>
-      <tbody>
-        <%= render @categories %>
-      </tbody>
-    </table>
-    <%= will_paginate %>
+  <div class="col-md-12">
+    <%= link_to "", new_admin_category_path, remote: true,
+      class: "btn btn-primary btn-add-category pull-right fa fa-plus" %>
   </div>
+</div>
+<div class="table-responsive table-condensed ">
+  <table class="responstable" id="list_category" cellspacing="5px">
+    <tr>
+      <th><%= t ".number" %></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".description" %></th>
+      <th><%= t ".total" %></th>
+      <th><%= t ".info" %></th>
+      <th><%= t ".edit" %></th>
+      <th><%= t ".delete" %></th>
+    </tr>
+    <tbody>
+      <%= render @categories %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
 </div>
 <%= form_tag admin_categories_path , method: :post,
   id: "add-category-form" do %>
@@ -43,7 +42,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h3><%= t".add_category" %></h3>
+          <h3 class="head"><%= t".add_category" %></h3>
         </div>
         <div class="modal-body">
           <form role="form">
@@ -56,9 +55,9 @@
               <%= text_area_tag :description, params[:description],
                 class: "form-control" %>
             </div>
-            <%= submit_tag t(".add"), class: "btn btn-success btn-block"%>
           </div>
           <div class="modal-footer">
+          <%= submit_tag t(".add"), class: "btn btn-primary btn-submit"%>
             <button type="submit" class="btn btn-danger"
               data-dismiss="modal">
               <%= t ".cancel" %>
@@ -69,3 +68,5 @@
     </div>
   </div>
 <% end %>
+
+
