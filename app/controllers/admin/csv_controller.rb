@@ -9,6 +9,6 @@ class Admin::CsvController < ApplicationController
 
   def create
     Word.import params[:file]
-    redirect_to root_url, notice: I18n.t(".word_imported")
+    redirect_to :back, notice: I18n.t(".word_imported")
   end
 end

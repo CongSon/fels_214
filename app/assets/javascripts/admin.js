@@ -15,10 +15,14 @@
 //= require turbolinks
 //= require i18n.js
 //= require i18n/translations
-//= require_tree .
+//= require_tree ./admin
 //= require bootstrap
 //= require custom.js
-
+//= require admin/highcharts
+//= require admin/chart.js
+//= require admin/pie_chart.js
 $(document).on('turbolinks:load', function () {
   category.initialize();
+  chart.initialize();
+  pieChart.initialize();
 });
