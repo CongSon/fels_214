@@ -1,5 +1,7 @@
 require "common"
 class Admin::ChartsController < ApplicationController
+  layout "admin"
+
   include SharedMethods
   def index
     @user_accounts = []

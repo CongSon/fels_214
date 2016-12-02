@@ -2,6 +2,7 @@ class Admin::WordsController < ApplicationController
   before_action :verify_login, :verify_admin
   before_action :load_all_category, except: [:show, :destroy]
   before_action :load_word, except: [:index, :new, :create]
+  layout "admin"
 
   def index
     params[:search] ||= ""

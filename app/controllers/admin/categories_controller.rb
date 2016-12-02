@@ -1,5 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   before_action :load_category, except: [:create, :index, :new]
+  layout "admin"
 
   def index
     params[:search] ||= ""
