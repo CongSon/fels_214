@@ -12,15 +12,18 @@
         <%= render "users/follow_form" if logged_in? %>
       </aside>
       <aside class="col-md-5">
-        <section>
-        <h1><%= t ".activities" %></h1>
-        <% if @activities.any? %>
-          <ul>
-            <%= render @activities %>
-          </ul>
-          <%= will_paginate %>
-        <% end %>
-      </section>
+        <section class="note">
+          <h1>
+            <i class="fa fa-bell-o"></i>
+            <%= t ".activities" %>
+          </h1>
+          <% if @activities.any? %>
+            <ul>
+              <%= render @activities %>
+            </ul>
+            <%= will_paginate %>
+          <% end %>
+        </section>
       </aside>
     </div>
   <% end %>

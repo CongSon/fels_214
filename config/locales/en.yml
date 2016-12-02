@@ -169,7 +169,9 @@ en:
         word_content: "Word Content"
         action: "Action"
         import: "Import"
+        import_file: "Import file"
         submit: "Submit"
+        close: "Close"
       word:
         info: " Info"
         edit: " Edit"
@@ -188,6 +190,9 @@ en:
       destroy:
         deleted: "Deleted"
         fail_to_delete: "Fail to delete"
+      update:
+        update_success: "Update word successfully"
+        update_failed: "Fail to update word"
   sessions:
     new:
       login : "Log in"

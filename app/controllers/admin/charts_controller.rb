@@ -1,5 +1,6 @@
 require "common"
 class Admin::ChartsController < ApplicationController
+  before_action :verify_login, :verify_admin
   layout "admin"
 
   include SharedMethods

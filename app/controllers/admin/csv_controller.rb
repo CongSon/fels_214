@@ -1,4 +1,5 @@
 class Admin::CsvController < ApplicationController
+  before_action :verify_login, :verify_admin
   def index
     @words = Word.order(:created_at)
     respond_to do |format|

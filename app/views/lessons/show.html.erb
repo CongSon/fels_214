@@ -16,7 +16,10 @@
     </div>
     <div>
       <label><%= t ".mark" %>:</label>
-      <%= @lesson.number_correct_answer.to_s + " / " + Settings.lesson.size.to_s%>
+      <% unless @lesson.nil? %>
+        <%= @lesson.number_correct_answer.to_s + " / " +
+          Settings.lesson.size.to_s%>
+      <% end %>
     </div>
   </div>
   <h1><%= t ".lesson", id: @lesson.id %></h1>
@@ -27,7 +30,8 @@
       <% end %>
     </ol>
     <div class="col-sm-1">
-      <%= link_to t(".ok"), categories_path, class: "btn btn-primary" %>
+      <%= link_to t(".ok"), user_path(id: @lesson.user_id),
+        class: "btn btn-primary" %>
     </div>
   <% end %>
 </section>
