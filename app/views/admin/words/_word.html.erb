@@ -5,11 +5,14 @@
   </td>
   <td class="category_id col-sm-3"><%= word.category.name  %></td>
   <td class="word_name col-sm-4"><%= word.content %></td>
-  <td class="action col-sm-4">
-    <%= link_to t(".info"), admin_word_path(word), class: "btn btn-info fa fa-eye" %>
-    <%= link_to t(".edit"),
+  <td class="action col-sm-1">
+    <%= link_to "", admin_word_path(word), class: "btn btn-info fa fa-info-circle" %>
+  <td class="col-sm-1">
+    <%= link_to "",
       edit_admin_word_path(word), class: "btn btn-warning fa fa-pencil" %>
-    <%= link_to t(".delete"), admin_word_path(word), method: :delete,
+  </td>
+  <td class="col-sm-1">
+    <%= link_to "", admin_word_path(word), method: :delete,
       data: {confirm: t(".confirm")}, class: "btn btn-danger fa fa-trash" %>
   </td>
 </tr>
